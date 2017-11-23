@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<link rel="shortcut icon" href="../dist/image/code.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title></title>
+<link rel="stylesheet" href="../dist/css/weui.css">
+<link rel="stylesheet" href="../dist/css/helpweui.css">
+
+</head>
+<body>
+	<div class="page tabbar js_show"">
+		<div class="page__bd" style="height: 100%;">
+			<div class="weui-tab">
+				<div class="weui-navbar">
+		                <div class="weui-navbar__item weui-bar__item_on" id="title">
+		                  					
+		                </div>
+	           		</div>
+				<div class="weui-tab__panel" style="margin: 8px;padding-bottom: 50px;">
+					<h2>MVC、MVP、MVVP 和  AAC(Android Architecture Components)</h2>
+					<section>
+						<h2>为什么要用开发模式？</h2>
+						<p>高内聚，低耦合；提高代码复用性，加强代码的整体质量。    </p>
+						<p>MVX 不变的是Model  和 View ，都是为了实现M 和 V的解耦，殊途同归。View只处理显示和系统相关的功能，Model只处理数据相关的功能，Model和View实现完全解耦。</p>
+					</section>
+					<section>
+						<h2>Android的开发架构演变</h2>
+						<p>MVC→MVP→MVVM，目前Google发布了新的架构组件（Architecture Components）1.0稳定版 ，简称为AAC，是MVVM模式的进一步分解。  </p>
+					</section>
+					<section>
+						<h3>MVC</h3>
+						<p>在一定程度上实现了Model和View的解耦，在Android中，就是xml布局文件充当view层，Activity充当Control层的角色,与数据库和网络交互数据的部分充当Model层。  </p>
+						<p> 缺点：1 xml文件的view层过于单薄，一部分的功能需要Activty去实现。而Activity过于臃肿，既有Control拥有功能，又有View层的部分功能。 </p>
+           				<p> 2 View和model有一定的耦合，model修改会引发view也要修改。</p>
+					</section>
+					<section>
+						<h3>MVP</h3>
+						<p>比起MVC对Model和View的解藕做的更好。Presenter充当view和model的桥梁作用，view层接收到用户事件之后传递到presenter，presenter调用model层操作数据，然后在view层展示。model和view实现完全解耦。presenter和view、presenter和model通过接口交互实现解耦。  </p>
+						<p> 缺点：当Activity/Fragment被销毁时，Presenter仍然有可能继续持有它们的引用，从而导致内存泄露！解决办法是没onDestroy（）中调用Presenter中的的方法，取消引用！当然也可以写到BaseActivity中，但Java的单继承有时也会限制我们。总之需要我们手动去管理Persenter。</p>
+           			
+					</section>
+					<section>
+						<h3>MVVM</h3>
+						<p>MVVM,比MVP更进一步解耦。MVP中，我们要在Acitity中写一些类似于showData()的方法，供persenter调用更新界面数据。而MVVP中可以省略这一步，通过databingding 实现View和数据的绑定，当数据有更新时，自动更新界面。</p>           		
+					</section>
+					<section>
+						<h3>AAC</h3>
+						<p>AAC，谷歌官方推出的Android开发框架，主要组件包括：Lifecycle，ViewModel，LiveData,Room。由于可感知生命周期，所以能最大程度的防止内存溢出等错误的发生。</p>           		
+					</section>
+				</div>
+				<div class="weui-tabbar">
+					<a href="../../index.html" class="weui-tabbar__item ">
+						<span style="display: inline-block; position: relative;"> 
+							<img src="../dist/image/article.png" alt="" class="weui-tabbar__icon">
+							<span class="weui-badge"style="position: absolute; top: -2px; right: -13px;">8</span>
+						</span>
+						<p class="weui-tabbar__label">文章</p>
+					</a> 
+					<a href="javascript:;" class="weui-tabbar__item weui-bar__item_on"> 
+					<span style="display: inline-block; position: relative;"> 
+						<img src="../dist/image/find-activity.png" alt="" class="weui-tabbar__icon">
+					</span>
+						<p class="weui-tabbar__label">发现</p>
+					</a> 
+					<a href="./my.html" class="weui-tabbar__item"> 
+						<img src="../dist/image/me.png" alt="" class="weui-tabbar__icon">
+						<p class="weui-tabbar__label">关于我</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../dist/js/zepto.js"></script>
+<script type="text/javascript" src="../dist/js/common.js"></script>
+</body>
+</html>
