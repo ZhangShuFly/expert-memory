@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<link rel="shortcut icon" href="../dist/image/code.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title></title>
+<link rel="stylesheet" href="../dist/css/weui.css">
+<link rel="stylesheet" href="../dist/css/helpweui.css">
+
+</head>
+<body>
+	<div class="page tabbar js_show"">
+		<div class="page__bd" style="height: 100%;">
+			<div class="weui-tab">
+				<div class="weui-navbar">
+		                <div class="weui-navbar__item weui-bar__item_on" id="title">
+		                  					
+		                </div>
+	           		</div>
+				<div class="weui-tab__panel">
+						<article class="weui-article">
+							<h1>dragger2 基本概念</h1>
+							<section>
+								<h2>写在前面的话</h2>
+								<p>好记性不如烂笔头，有些知识时间久了会慢慢淡忘，越来越发现还是写下来比较好。因为之前接触过spring，对控制反转（IOC）和依赖注入（DI）的概念有些了解，所以在接触dagger2 的时候就很容易理解</p>
+							</section>
+							<section>
+								<h2>1、 通过 @Inject，@Componet 实现依赖注入</h2>
+								<h3>实现步骤：</h3>
+								<p>第一步：通过@Inject标注需要注入类在目标类中的实例</p>
+								<p>第二步：通过@Inject标注需要注入类的构造方法</p>
+								<p>第三步：调用Componet关联注入</p>
+								<p></p>
+							</section>
+							<section>
+								<h2>1、 通过 @Inject，@Componet, @Module, @Provides 实现第三方类库的依赖注入</h2>
+								<h3>实现步骤：</h3>
+								<p>第一步：通过@Inject标注需要注入类在目标类中的实例</p>
+								<p>第二步：通过@Module封装第三方类库，并把Module中创建第三方类的实例的方法，通过@Provides标注</p>
+								<p>第三步：通过Componet关联注入</p>
+								<p></p>
+							</section>
+							
+							<section>
+								<h2>参考资料：</h2>
+								<p>http://www.jianshu.com/p/cd2c1c9f68d4</p>
+								<p>http://blog.csdn.net/soslinken/article/details/52184113</p>
+								<p></p>
+							</section>
+						</article>
+		
+				</div>
+				<div class="weui-tabbar">
+					<a href="../../index.html" class="weui-tabbar__item ">
+						<span style="display: inline-block; position: relative;"> 
+							<img src="../dist/image/article.png" alt="" class="weui-tabbar__icon">
+							<span class="weui-badge"style="position: absolute; top: -2px; right: -13px;">8</span>
+						</span>
+						<p class="weui-tabbar__label">文章</p>
+					</a> 
+					<a href="javascript:;" class="weui-tabbar__item weui-bar__item_on"> 
+					<span style="display: inline-block; position: relative;"> 
+						<img src="../dist/image/find-activity.png" alt="" class="weui-tabbar__icon">
+					</span>
+						<p class="weui-tabbar__label">发现</p>
+					</a> 
+					<a href="./my.html" class="weui-tabbar__item"> 
+						<img src="../dist/image/me.png" alt="" class="weui-tabbar__icon">
+						<p class="weui-tabbar__label">关于我</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../dist/js/zepto.js"></script>
+<script type="text/javascript" src="../dist/js/common.js"></script>
+</body>
+</html>
