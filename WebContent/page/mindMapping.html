@@ -22,7 +22,34 @@
 		                </div>
 	           		</div>
 				<div class="weui-tab__panel">
-					<img alt="mindMapping image" src="../dist/image/android_project.svg" style="width: 100%;">
+					<div class="weui-article">
+						<section>
+							<h2>项目架构，代码中有上传的demo代码。</h2>
+						</section>
+						<section>
+							<h4> 随着项目的迭代，业务功能越来越多，之间的依赖也越来越严重，试想如果我们将所有代码都写在一个项目中，那将是一个多么大的灾难，会出现很多问题：</h4>
+							<p>1、一个开发人员出错，提交的代码出现错误编译不通过，其他开发人员都得等着。</p>
+							<p>2、 合并和编译这样一个项目得浪费多少时间。</p>
+							<p>3、团队人员在修改代码时是多么的战战兢兢，你不知道你的修改会让哪个业务崩溃。</p>
+							<p>4、产品上线时，一个业务功能的延期，将导致整个项目的延期。</p>
+						</section>
+						<section>
+							<h4>解决办法：</h4>
+							<p>每个业务一个项目，项目上线时打包提交到仓库，有个总的项目MainProject，依赖各个业务项目，编译打包MainProject，就能生成apk。</p>
+						</section>
+						<section>
+							<h4>要求：</h4>
+							<p>每个业务之间不允许有关联。如果需要对外提供接口，则将所有接口单独打包成jar包对外提供，在自己项目中实现这些接口。有一个BaseCompat项目，包含所有上述jar包，还包含一些基础与业务无关的功能，所有项目依赖它。</p>
+						</section>
+						<section>
+							<h4>思维导图</h4>
+							<img alt="mindMapping image" src="../dist/image/android_project.svg" style="width: 100%;">
+						</section>
+					
+					将大致按照这个思维导图进行说明和代码上传。
+					</div>
+					
+					
 		
 				</div>
 				<div class="weui-tabbar">
@@ -31,13 +58,13 @@
 							<img src="../dist/image/article.png" alt="" class="weui-tabbar__icon">
 							<span class="weui-badge"style="position: absolute; top: -2px; right: -13px;">8</span>
 						</span>
-						<p class="weui-tabbar__label">文章</p>
+						<p class="weui-tabbar__label">笔记</p>
 					</a> 
 					<a href="javascript:;" class="weui-tabbar__item weui-bar__item_on"> 
 					<span style="display: inline-block; position: relative;"> 
 						<img src="../dist/image/find-activity.png" alt="" class="weui-tabbar__icon">
 					</span>
-						<p class="weui-tabbar__label">发现</p>
+						<p class="weui-tabbar__label">代码</p>
 					</a> 
 					<a href="./my.html" class="weui-tabbar__item"> 
 						<img src="../dist/image/me.png" alt="" class="weui-tabbar__icon">
