@@ -22,6 +22,7 @@
 		                </div>
 	           		</div>
 				<div class="weui-tab__panel" style="margin: 8px;padding-bottom: 50px;">
+					<article class="weui-article">
 					<h2>MVC、MVP、MVVP 和  AAC(Android Architecture Components)</h2>
 					<section>
 						<h2>为什么要用开发模式？</h2>
@@ -34,24 +35,26 @@
 					</section>
 					<section>
 						<h3>MVC</h3>
-						<p>在一定程度上实现了Model和View的解耦，在Android中，就是xml布局文件充当view层，Activity充当Control层的角色,与数据库和网络交互数据的部分充当Model层。  </p>
-						<p> 缺点：1 xml文件的view层过于单薄，一部分的功能需要Activty去实现。而Activity过于臃肿，既有Control拥有功能，又有View层的部分功能。 </p>
-           				<p> 2 View和model有一定的耦合，model修改会引发view也要修改。</p>
+						<p>相信现在已经很少有项目使用这种开发模式，MVC在一定程度上实现了Model和View的解耦，在Android中，就是xml布局文件充当view层，Activity充当Control层的角色,与数据库和网络交互数据的部分充当Model层。</p>
+						<p> 由于xml的view层实在太羸弱，Activity可以看作是view和controll的合体，最终导致承担责任过多，代码量过大。更像是“VM”模式 </p>
 					</section>
+					
 					<section>
 						<h3>MVP</h3>
 						<p>比起MVC对Model和View的解藕做的更好。Presenter充当view和model的桥梁作用，view层接收到用户事件之后传递到presenter，presenter调用model层操作数据，然后在view层展示。model和view实现完全解耦。presenter和view、presenter和model通过接口交互实现解耦。  </p>
-						<p> 缺点：当Activity/Fragment被销毁时，Presenter仍然有可能继续持有它们的引用，从而导致内存泄露！解决办法是没onDestroy（）中调用Presenter中的的方法，取消引用！当然也可以写到BaseActivity中，但Java的单继承有时也会限制我们。总之需要我们手动去管理Persenter。</p>
+						<p>但还是存在一些问题需要注意，比如View和Presenter互相持有引用， 当Activity/Fragment被销毁时，Presenter仍然有可能继续持有它们的引用，从而导致内存泄露！解决办法是没onDestroy（）中调用Presenter中的的方法，取消引用！当然也可以写到BaseActivity中，但Java的单继承有时也会限制我们。总之需要我们手动去管理Persenter。同样面临业务复杂时Persenter过大的问题。</p>
            			
 					</section>
 					<section>
 						<h3>MVVM</h3>
 						<p>MVVM,比MVP更进一步解耦。MVP中，我们要在Acitity中写一些类似于showData()的方法，供persenter调用更新界面数据。而MVVP中可以省略这一步，通过databingding 实现View和数据的绑定，当数据有更新时，自动更新界面。</p>           		
+						<p>View不涉及任何业务逻辑和数据，只做与UI和系统相关操作。ViewModel和View相反，不设计任何UI相关的事，只做业务逻辑和数据相关的事。Model很简单，从网络或者sqllite获取数据。</p>
 					</section>
 					<section>
 						<h3>AAC</h3>
 						<p>AAC，谷歌官方推出的Android开发框架，主要组件包括：Lifecycle，ViewModel，LiveData,Room。由于可感知生命周期，所以能最大程度的防止内存溢出等错误的发生。</p>           		
 					</section>
+					</article>
 				</div>
 				<div class="weui-tabbar">
 					<a href="../../index.html" class="weui-tabbar__item ">
