@@ -51,3 +51,36 @@ Android开发过程中，有一个比较重要的错误：ANR，Application Not 
 
 
 **集成BlockCanary**
+
+  BlockCanary可检测卡顿并提示。而且使用简单，一个完全不懂程序的人也可使用，而且提示友好，易于看懂。
+   
+   BaseApplication.class
+    
+    public void onCreate() {
+        super.onCreate();
+        BlockCanary.install(this, new CompatBaseBlockCanaryContext()).start();
+    }
+    
+   CompatBaseBlockCanaryContext.class
+   
+    public class CompatBaseBlockCanaryContext extends BlockCanaryContext {
+
+    public String provideUid() {
+        return "CompatBaseUid";
+    }
+
+    @Override
+    public String providePath() {
+        return "/";
+    }
+
+    @Override
+    public boolean displayNotification() {
+        return true;
+    }
+
+    @Override
+    public int provideBlockThreshold() {
+        return 1000;
+    }
+    }
