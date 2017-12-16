@@ -16,7 +16,7 @@
 
 #### 6、 [网络请求封装](https://github.com/ZhangShuFly/LibNetwork) 
 
-#### 7、 [基于Android架构组件稳定版1.0的项目架构demo](https://github.com/ZhangShuFly/Business)
+#### 7、 [基于Android架构组件稳定版1.0的项目架构demo（包含LifeCycle、ViewModel、LiveData、Room、Dagger2、retrofit2）](https://github.com/ZhangShuFly/Business)
 
 #### 8、 [基于Tniker的热更新](https://github.com/ZhangShuFly/TinkerDemo/blob/master/README.md)
 
