@@ -27,3 +27,5 @@
 #### 11、 [基于Proguard方式混淆](https://github.com/ZhangShuFly/Config/blob/master/Proguard.md)
 
 #### 12、 [封装的Json、图片、缓存工具](https://github.com/ZhangShuFly/BaseCompat)
+
+#### 13、 [启动优化](启动优化.md)
